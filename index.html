@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick and Morty API</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <nav-bar></nav-bar>
+    </div>
+    <script type="module">
+        import NavBar from './components/NavBar.js';
+
+        Vue.component('NavBar', NavBar);
+
+        const vm = new Vue({
+            el: '#app',
+        })
+    </script>
+</body>
+</html>
