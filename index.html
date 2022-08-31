@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <img class="logo" src="../assets/logo.png"/>
+      <img class="logo" src="../assets/logo.png" />
       <nav-bar></nav-bar>
     </div>
     <script type="module">
@@ -22,56 +22,114 @@
   </body>
 </html>
 <style>
-    body {
-      background: #000;
-    }
-    .logo {
-      display: flex;
-      margin: 0 auto;
-    }
-    .input-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .input {
-      border: none;
-      width: 30vw;
-      outline: none;
-      padding: 10px;
-    }
-    .input-container__button {
-      border: none;
-      outline: none;
-      padding: 10px;
-      width: 5em;
-      background: rgb(0, 155, 0);
-      color: white;
-      cursor: pointer;
-    }
-    .card-infos {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 31px;
-    }
-    .card {
-      background-color: green;
-      margin: 5px;
-      padding: 15px;
-      width: 20vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .card-image {
-      border-radius: 50%;
-      width: 15vw;
-    }
-    .message-error{
-      margin-top: 10px;
-      color: #f00;
-    }
-  </style>
+  body {
+    background: #000;
+  }
+  .logo {
+    display: flex;
+    margin: 0 auto;
+  }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .input {
+    border: none;
+    width: 30vw;
+    outline: none;
+    padding: 10px;
+  }
+  .input-container__button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 5em;
+    background: rgb(0, 155, 0);
+    color: white;
+    cursor: pointer;
+  }
+  .card-infos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 31px;
+  }
+  .card {
+    background-color: green;
+    margin: 5px;
+    padding: 15px;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-image {
+    border-radius: 50%;
+    width: 15vw;
+    cursor: pointer;
+  }
+  .message-error {
+    margin-top: 10px;
+    color: #f00;
+  }
+  .characters-dialog {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* .characters-dialog::before{
+    content: '';
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  } */
+  .characters-dialog__container{
+    display: grid;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+    gap: 50px;
+    padding: 50px;
+    animation: fadeIn .3s forwards;
+    background: #fff;
+  }
+  .characters-dialog__container-img{
+    grid-column: 1;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .characters-dialog__container-img img{
+    display: block;
+    max-width: 300px;
+  }
+  .characters-dialog__button{
+    display: flex;
+    justify-content: end;
+  }
+  .characters-dialog__button-close-dialog{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid #000;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .characters-details{
+    max-width: 600px;
+    grid-column: 2;
+  }
+</style>

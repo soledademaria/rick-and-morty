@@ -9,7 +9,8 @@ export default{
         return{
             name: '',
             infos: [],
-            requestedError: false
+            requestedError: false,
+          
         }
     },
 
