@@ -19,6 +19,7 @@ export default{
             .then((res) => {
                 if(res.ok){
                     res.json().then((res) => {
+                        this.requestedError = false;
                         this.infos = res.results;
                     });
                 }else{
@@ -38,5 +39,5 @@ export default{
             <span v-if="requestedError" class="message-error"> Ops! O personagem buscado não foi encontrado :( </span>
             <card-info v-else :info="infos"></card-info>
         </div>
-`,
+    `,
 }
