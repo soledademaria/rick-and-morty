@@ -22,7 +22,7 @@ export default{
                         this.infos = res.results;
                     });
                 }else{
-                    this.messageError = true;
+                    this.requestedError = true;
                 }
             })
         }
@@ -30,9 +30,13 @@ export default{
 
 
     template: `
-        <div>
-            <h1> Eu sou o nav bar </h1>
-            <card-info>  <card-info>
+        <div class="input-container">
+            <div>
+                <input v-model="name" class="input"></input>
+                <button @click="getInfos" class="input-container__button">Buscar</button>
+            </div>
+            <span v-if="requestedError" class="message-error"> Ops! O personagem buscado não foi encontrado :( </span>
+            <card-info v-else :info="infos"></card-info>
         </div>
-    `
+`,
 }
